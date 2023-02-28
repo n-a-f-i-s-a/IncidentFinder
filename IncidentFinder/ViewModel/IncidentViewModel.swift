@@ -26,9 +26,29 @@ final public class IncidentViewModel {
         case empty(Int)
     }
     
+    /// Different states.
+    public enum State {
+        /// User hasn't searched.
+        case idle
+
+        /// Data is being fetched.
+        case loading
+
+        /// Data has been loaded.
+        case loaded
+
+        /// API has not returned any data.
+        case empty
+        
+        /// Encountered an error
+        case error(Error)
+    }
+
+    
     // MARK: - properties
 
     private let incidentService: IncidentServiceProtocol
+    public var state: State
     var incidents: [Incident]
     
     /// Initializes a view model.
@@ -39,31 +59,29 @@ final public class IncidentViewModel {
     init(incidentService: IncidentServiceProtocol) {
         self.incidentService = incidentService
         self.incidents = []
+        self.state = .idle
     }
 }
 
 extension IncidentViewModel {
     
-    func getIncidents() {
-        Task { [weak self] in
-            do {
-                self?.incidents = []
-                try await self?.fetchIncidents()
-            } catch {
-                throw error
-            }
-        }
-    }
-    
     /// Fetches the incidents from the API.
     
     func fetchIncidents() async throws {
         do {
-            let result = try await incidentService.getData()
-            print(result)
+            incidents = try await incidentService.getData()
+            sortIncidents(isDescending: true)
+            state = .loaded
         } catch {
+            state = .error(error)
             throw error
         }
+    }
+    
+    func sortIncidents(isDescending: Bool ) {
+        isDescending
+            ? incidents.sort { $0.lastUpdated > $1.lastUpdated }
+            : incidents.sort { $0.lastUpdated < $1.lastUpdated }
     }
     
 }
