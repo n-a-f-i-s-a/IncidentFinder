@@ -52,10 +52,16 @@ final class DetailViewController: UIViewController, ViewModelProtocol {
     }
     
     @objc func navigate() {
-        let coordinate = viewModel.location
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        let coordinates = viewModel.location
+        let regionDistance:CLLocationDistance = 10000
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinates, addressDictionary:nil))
         mapItem.name = viewModel.title
-        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        mapItem.openInMaps(launchOptions: [
+            MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving,
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ])
     }
     
 }
@@ -105,9 +111,12 @@ private extension DetailViewController {
                         for: indexPath) as? MapCollectionViewCell else { fatalError("Could not create new cell") }
                     cell.configure(
                         mapCellViewModel: MapCellViewModel(
-                            coordinates: CLLocationCoordinate2D.init(
-                                latitude: item.latitude,
-                                longitude: item.longitude
+                            incidentAnnotation: IncidentAnnotation(
+                                title: item.title,
+                                locationName: item.location,
+                                coordinate: CLLocationCoordinate2D.init(
+                                    latitude: item.latitude,
+                                    longitude: item.longitude)
                             )
                         )
                     )

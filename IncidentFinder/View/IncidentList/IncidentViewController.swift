@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IncidentViewController: UIViewController {
+final class IncidentViewController: UIViewController {
     
     // MARK: - Type
 

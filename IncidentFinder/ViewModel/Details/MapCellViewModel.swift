@@ -10,9 +10,9 @@ import CoreLocation
 
 final class MapCellViewModel {
     
-    var coordinates: CLLocationCoordinate2D
+    var incidentAnnotation: IncidentAnnotation
     
-    init(coordinates: CLLocationCoordinate2D) {
-        self.coordinates = coordinates
+    init(incidentAnnotation: IncidentAnnotation) {
+        self.incidentAnnotation = incidentAnnotation
     }
 }

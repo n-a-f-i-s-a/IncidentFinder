@@ -116,4 +116,5 @@ public extension IncidentViewModel {
     var imageName: String {
         "arrow.up.arrow.down"
     }
+
 }

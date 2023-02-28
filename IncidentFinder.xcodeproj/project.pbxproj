@@ -34,6 +34,7 @@
 		7897A32729ADDD15008D2A8B /* TextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32629ADDD15008D2A8B /* TextCellViewModel.swift */; };
 		7897A32929ADDD48008D2A8B /* MapCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */; };
 		7897A32B29ADDDDC008D2A8B /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */; };
+		78F1680429AEA121005129CB /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1680329AEA121005129CB /* IncidentAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		7897A32629ADDD15008D2A8B /* TextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCellViewModel.swift; sourceTree = "<group>"; };
 		7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellViewModel.swift; sourceTree = "<group>"; };
 		7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
+		78F1680329AEA121005129CB /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				7897A30229AD79DE008D2A8B /* Incident.swift */,
+				78F1680329AEA121005129CB /* IncidentAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				7897A32929ADDD48008D2A8B /* MapCellViewModel.swift in Sources */,
 				7897A31229ADA992008D2A8B /* IncidentCellViewModel.swift in Sources */,
 				7897A30629AD7E6F008D2A8B /* IncidentService.swift in Sources */,
+				78F1680429AEA121005129CB /* IncidentAnnotation.swift in Sources */,
 				7897A32529ADDB53008D2A8B /* MapCollectionViewCell.swift in Sources */,
 				7897A31529ADAC8C008D2A8B /* Formatter.swift in Sources */,
 				7897A30C29AD8360008D2A8B /* IncidentViewModel.swift in Sources */,
