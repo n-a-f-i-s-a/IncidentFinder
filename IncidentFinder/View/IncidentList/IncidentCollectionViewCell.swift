@@ -13,10 +13,11 @@ final class IncidentCollectionViewCell: UICollectionViewListCell {
     
     static let reuseIdentifier = "IncidentCell"
     
+    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet private weak var badgeView: UIView!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var lastUpdatedLabel: UILabel!
     @IBOutlet private weak var titlelabel: UILabel!
-    @IBOutlet private weak var statusLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,8 +35,9 @@ final class IncidentCollectionViewCell: UICollectionViewListCell {
     }
     
     func configureStyle(incidentCellViewModel: IncidentCellViewModel) {
+        badgeView.backgroundColor = UIColor.makeBadgeColor(status: incidentCellViewModel.status)
         self.statusLabel.backgroundColor = UIColor.makeBadgeColor(status: incidentCellViewModel.status)
-        self.statusLabel.layer.cornerRadius = 10.0
+        self.badgeView.layer.cornerRadius = 5.0
     }
     
     func showImage(incidentCellViewModel: IncidentCellViewModel) {
