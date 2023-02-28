@@ -34,6 +34,10 @@ final class IncidentCollectionViewCell: UICollectionViewListCell {
         showImage(incidentCellViewModel: incidentCellViewModel)
     }
     
+}
+
+private extension IncidentCollectionViewCell {
+    
     func configureStyle(incidentCellViewModel: IncidentCellViewModel) {
         badgeView.backgroundColor = UIColor.makeBadgeColor(status: incidentCellViewModel.status)
         self.statusLabel.backgroundColor = UIColor.makeBadgeColor(status: incidentCellViewModel.status)
@@ -47,6 +51,7 @@ final class IncidentCollectionViewCell: UICollectionViewListCell {
                     self?.imageView.image = image
                 }
             } catch {
+                // don't throw any error and show placeholder
             }
         }
     }

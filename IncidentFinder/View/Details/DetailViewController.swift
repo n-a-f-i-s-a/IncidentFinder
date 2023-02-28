@@ -66,6 +66,8 @@ final class DetailViewController: UIViewController, ViewModelProtocol {
     
 }
 
+// MARK: - datsource
+
 private extension DetailViewController {
     
     func update(with incidents: [Incident], animate: Bool = true) {

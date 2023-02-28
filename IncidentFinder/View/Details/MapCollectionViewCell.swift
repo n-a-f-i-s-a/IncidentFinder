@@ -15,9 +15,9 @@ final class MapCollectionViewCell: UICollectionViewListCell {
     @IBOutlet private weak var mapView: MKMapView!
     
     static let reuseIdentifier = "mapCell"
-    let identifier = "incident"
-    let placeholderImageName = "map.circle.fill"
-    var cachedImage: UIImage?
+    private let identifier = "incident"
+    private let placeholderImageName = "map.circle.fill"
+    private var cachedImage: UIImage?
     
     func configure(mapCellViewModel: MapCellViewModel) {
         cachedImage = mapCellViewModel.incidentAnnotation.image
@@ -31,11 +31,17 @@ final class MapCollectionViewCell: UICollectionViewListCell {
         addAnnotation(mapCellViewModel: mapCellViewModel)
     }
     
+}
+
+private extension MapCollectionViewCell {
+    
     func addAnnotation(mapCellViewModel: MapCellViewModel) {
         mapView.addAnnotation(mapCellViewModel.incidentAnnotation)
     }
     
 }
+
+// MARK: - delegate
 
 extension MapCollectionViewCell: MKMapViewDelegate {
     

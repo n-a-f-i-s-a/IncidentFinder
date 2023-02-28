@@ -21,7 +21,12 @@ final class TextCollectionViewCell: UICollectionViewListCell {
         self.subtitleLabel.text = textCellViewModel.subtitle
     }
     
+}
+
+private extension TextCollectionViewCell {
+    
     func configureStyle() {
         self.titleLabel.textColor = .secondaryFontColor
     }
+    
 }

@@ -194,6 +194,8 @@ private extension IncidentViewController {
     
 }
 
+// MARK: - delegate
+
 extension IncidentViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

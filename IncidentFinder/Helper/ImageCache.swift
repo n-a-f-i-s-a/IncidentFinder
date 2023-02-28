@@ -9,6 +9,8 @@ import UIKit
 
 final class ImageCache {
     
+    // MARK: - properties
+    
     private let cachedImage: NSCache<NSString, UIImage>
     
     init() {
@@ -19,6 +21,13 @@ final class ImageCache {
 
 extension ImageCache: ImageCacheProtocol {
     
+    /// Caches an image.
+    ///
+    /// - Parameters:
+    ///    - image: The image to be cached.
+    ///    - urlString: The image url string of of the image.
+    ///
+    
     func cacheImage(
         image: UIImage,
         urlString: NSString
@@ -26,6 +35,11 @@ extension ImageCache: ImageCacheProtocol {
         self.cachedImage.setObject(image, forKey: urlString)
     }
     
+    /// Returns a cached image.
+    ///
+    /// - Parameters:
+    ///    - urlString: The image url string of an image.
+    ///
     func getCachedImage(urlString: NSString) -> UIImage? {
         if let cachedImage = self.cachedImage.object(forKey: urlString) {
             return cachedImage

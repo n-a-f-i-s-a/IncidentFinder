@@ -9,6 +9,8 @@ import Foundation
 
 final class TextCellViewModel {
     
+    // MARK: - properties
+    
     var title: String
     var subtitle: String
     

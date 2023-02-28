@@ -8,9 +8,6 @@
 import UIKit
 
 protocol ImageCacheProtocol {
-    
     func cacheImage(image: UIImage, urlString: NSString)
-    
     func getCachedImage(urlString: NSString) -> UIImage?
-    
 }

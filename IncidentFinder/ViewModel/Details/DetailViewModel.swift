@@ -63,6 +63,8 @@ final public class DetailViewModel {
         }
     }
     
+    // MARK: - properties
+    
     var incident: Incident
     var imageCache: ImageCacheProtocol
     

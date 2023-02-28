@@ -10,9 +10,12 @@ import CoreLocation
 
 final class MapCellViewModel {
     
+    // MARK: - properties
+    
     var incidentAnnotation: IncidentAnnotation
     
     init(incidentAnnotation: IncidentAnnotation) {
         self.incidentAnnotation = incidentAnnotation
     }
+
 }

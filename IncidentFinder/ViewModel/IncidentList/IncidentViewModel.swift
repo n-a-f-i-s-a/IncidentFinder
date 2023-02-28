@@ -82,6 +82,11 @@ extension IncidentViewModel {
         }
     }
     
+    /// Sorts the incidents in ascending or decsending order.
+    ///
+    /// - Parameters:
+    ///     - isDescending: Indicates the sort order
+    
     func sortIncidents(isDescending: Bool ) {
         isDescending
             ? incidents.sort { $0.lastUpdated > $1.lastUpdated }
