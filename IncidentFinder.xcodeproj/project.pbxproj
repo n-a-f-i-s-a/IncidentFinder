@@ -27,6 +27,13 @@
 		7897A31529ADAC8C008D2A8B /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A31429ADAC8C008D2A8B /* Formatter.swift */; };
 		7897A31729ADC3C2008D2A8B /* Alert+showError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A31629ADC3C2008D2A8B /* Alert+showError.swift */; };
 		7897A31929ADC5F8008D2A8B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A31829ADC5F8008D2A8B /* Colors.swift */; };
+		7897A31B29ADD621008D2A8B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A31A29ADD621008D2A8B /* DetailViewController.swift */; };
+		7897A32129ADD67E008D2A8B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32029ADD67E008D2A8B /* DetailViewModel.swift */; };
+		7897A32329ADD710008D2A8B /* StoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32229ADD710008D2A8B /* StoryboardProtocol.swift */; };
+		7897A32529ADDB53008D2A8B /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32429ADDB53008D2A8B /* MapCollectionViewCell.swift */; };
+		7897A32729ADDD15008D2A8B /* TextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32629ADDD15008D2A8B /* TextCellViewModel.swift */; };
+		7897A32929ADDD48008D2A8B /* MapCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */; };
+		7897A32B29ADDDDC008D2A8B /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +78,13 @@
 		7897A31429ADAC8C008D2A8B /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		7897A31629ADC3C2008D2A8B /* Alert+showError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+showError.swift"; sourceTree = "<group>"; };
 		7897A31829ADC5F8008D2A8B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7897A31A29ADD621008D2A8B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7897A32029ADD67E008D2A8B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		7897A32229ADD710008D2A8B /* StoryboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProtocol.swift; sourceTree = "<group>"; };
+		7897A32429ADDB53008D2A8B /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
+		7897A32629ADDD15008D2A8B /* TextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCellViewModel.swift; sourceTree = "<group>"; };
+		7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellViewModel.swift; sourceTree = "<group>"; };
+		7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +170,9 @@
 		7897A2FF29AD79B6008D2A8B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7897A30B29AD8360008D2A8B /* IncidentViewModel.swift */,
+				7897A31F29ADD66D008D2A8B /* Details */,
+				7897A31C29ADD630008D2A8B /* IncidentList */,
 				7897A30D29AD89C7008D2A8B /* ViewModelProtocol.swift */,
-				7897A31129ADA992008D2A8B /* IncidentCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -166,8 +180,9 @@
 		7897A30029AD79BF008D2A8B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7897A2D329AD7964008D2A8B /* IncidentViewController.swift */,
-				7897A30F29ADA861008D2A8B /* IncidentCollectionViewCell.swift */,
+				7897A31D29ADD64D008D2A8B /* IncidentList */,
+				7897A31E29ADD65E008D2A8B /* Details */,
+				7897A32229ADD710008D2A8B /* StoryboardProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +213,44 @@
 				7897A31829ADC5F8008D2A8B /* Colors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7897A31C29ADD630008D2A8B /* IncidentList */ = {
+			isa = PBXGroup;
+			children = (
+				7897A31129ADA992008D2A8B /* IncidentCellViewModel.swift */,
+				7897A30B29AD8360008D2A8B /* IncidentViewModel.swift */,
+			);
+			path = IncidentList;
+			sourceTree = "<group>";
+		};
+		7897A31D29ADD64D008D2A8B /* IncidentList */ = {
+			isa = PBXGroup;
+			children = (
+				7897A30F29ADA861008D2A8B /* IncidentCollectionViewCell.swift */,
+				7897A2D329AD7964008D2A8B /* IncidentViewController.swift */,
+			);
+			path = IncidentList;
+			sourceTree = "<group>";
+		};
+		7897A31E29ADD65E008D2A8B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7897A31A29ADD621008D2A8B /* DetailViewController.swift */,
+				7897A32429ADDB53008D2A8B /* MapCollectionViewCell.swift */,
+				7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		7897A31F29ADD66D008D2A8B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7897A32629ADDD15008D2A8B /* TextCellViewModel.swift */,
+				7897A32029ADD67E008D2A8B /* DetailViewModel.swift */,
+				7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,15 +389,22 @@
 				7897A31729ADC3C2008D2A8B /* Alert+showError.swift in Sources */,
 				7897A31929ADC5F8008D2A8B /* Colors.swift in Sources */,
 				7897A2D029AD7964008D2A8B /* AppDelegate.swift in Sources */,
+				7897A32329ADD710008D2A8B /* StoryboardProtocol.swift in Sources */,
 				7897A30A29AD8173008D2A8B /* IncidentParser.swift in Sources */,
+				7897A32929ADDD48008D2A8B /* MapCellViewModel.swift in Sources */,
 				7897A31229ADA992008D2A8B /* IncidentCellViewModel.swift in Sources */,
 				7897A30629AD7E6F008D2A8B /* IncidentService.swift in Sources */,
+				7897A32529ADDB53008D2A8B /* MapCollectionViewCell.swift in Sources */,
 				7897A31529ADAC8C008D2A8B /* Formatter.swift in Sources */,
 				7897A30C29AD8360008D2A8B /* IncidentViewModel.swift in Sources */,
 				7897A30829AD7EC8008D2A8B /* ServiceProtocol.swift in Sources */,
+				7897A32B29ADDDDC008D2A8B /* TextCollectionViewCell.swift in Sources */,
 				7897A2D229AD7964008D2A8B /* SceneDelegate.swift in Sources */,
+				7897A31B29ADD621008D2A8B /* DetailViewController.swift in Sources */,
 				7897A30329AD79DE008D2A8B /* Incident.swift in Sources */,
 				7897A30E29AD89C7008D2A8B /* ViewModelProtocol.swift in Sources */,
+				7897A32729ADDD15008D2A8B /* TextCellViewModel.swift in Sources */,
+				7897A32129ADD67E008D2A8B /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

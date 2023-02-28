@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final public class IncidentViewModel {
     
     // MARK: - Type
@@ -44,6 +43,9 @@ final public class IncidentViewModel {
         case error(Error)
     }
 
+    enum PushedViewModel {
+        case detail(DetailViewModel)
+    }
     
     // MARK: - properties
 
@@ -84,4 +86,34 @@ extension IncidentViewModel {
             : incidents.sort { $0.lastUpdated < $1.lastUpdated }
     }
     
+    /// Returns the pushedViewModel for the next screen.
+    ///
+    /// - Parameters:
+    ///     - row: The row index to obtain the corresponding object ID.
+    ///  - Returns: A view model to be pushed.
+
+    func selectItem(row: Int) -> PushedViewModel? {
+        if incidents.indices.contains(row) {
+            return
+                .detail(
+                    DetailViewModel(
+                        incident: incidents[row]
+                    )
+                )
+        }
+        
+        return nil
+    }
+    
+}
+
+public extension IncidentViewModel {
+    
+    var title: String {
+        "Incidents"
+    }
+    
+    var imageName: String {
+        "arrow.up.arrow.down"
+    }
 }

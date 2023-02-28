@@ -25,12 +25,15 @@ class IncidentViewController: UIViewController {
     private lazy var dataSource = configureDataSource()
     private var incidentService = IncidentService(parser: IncidentParser())
     private var isSortedDescending: Bool = true
+    private var storyBoardName: String = "Main"
+    private var refreshControl: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavBar()
         configureViewModel()
+        configureNavBar()
+        configureRefreshControl()
         configureCollectionView()
         
         getIncidents()
@@ -46,9 +49,9 @@ private extension IncidentViewController {
     
     func configureNavBar() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "Incidents"
+        self.navigationItem.title = viewModel.title
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "arrow.up.and.down.square"),
+            image: UIImage(systemName: viewModel.imageName),
             style: .plain,
             target: self,
             action: #selector(addTapped)
@@ -61,14 +64,30 @@ private extension IncidentViewController {
         self.update(with: viewModel.incidents, animate: false)
     }
     
+    func configureRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(
+            self,
+            action: #selector(
+                refreshIncidentData),
+                for: .valueChanged
+         )
+        refreshControl.tintColor = .spinnerColor
+    }
+    
+    @objc func refreshIncidentData() {
+        getIncidents()
+    }
+    
     func configureCollectionView() {
         let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
         collectionView.collectionViewLayout = listLayout
         
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
         
-       
+        collectionView.refreshControl = refreshControl
     }
     
     func getIncidents() {
@@ -91,21 +110,30 @@ private extension IncidentViewController {
         switch viewModel.state {
         case .loading:
             self.update(with: viewModel.incidents, animate: false)
-            self.activityIndicatorView.startAnimating()
+            
+            if refreshControl.isRefreshing {
+                self.activityIndicatorView.stopAnimating()
+            } else {
+                self.activityIndicatorView.startAnimating()
+            }
+            
             self.collectionView.isUserInteractionEnabled = false
         case .empty:
             self.activityIndicatorView.stopAnimating()
             self.collectionView.isUserInteractionEnabled = true
             self.update(with: viewModel.incidents, animate: false)
+            self.refreshControl.endRefreshing()
         case .loaded:
             self.collectionView.isUserInteractionEnabled = true
             self.update(with: viewModel.incidents, animate: false)
             self.activityIndicatorView.stopAnimating()
+            self.refreshControl.endRefreshing()
         case .idle:
             break
         case .error(let error):
             self.collectionView.isUserInteractionEnabled = true
             self.activityIndicatorView.stopAnimating()
+            self.refreshControl.endRefreshing()
             showError(error)
         }
     }
@@ -161,6 +189,20 @@ private extension IncidentViewController {
                 
             }
         )
+    }
+    
+}
+
+extension IncidentViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextViewController = DetailViewController.instantiateFromStoryboard(storyboardName: storyBoardName)
+
+        if case let .detail(viewModel) = viewModel.selectItem(row: indexPath.row){
+            nextViewController.viewModel = viewModel
+        }
+
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }

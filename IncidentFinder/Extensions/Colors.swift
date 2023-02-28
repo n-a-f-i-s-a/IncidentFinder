@@ -22,4 +22,16 @@ extension UIColor {
         }
     }
     
+    static var secondaryFontColor: UIColor {
+        .systemGray5
+    }
+    
+    static var barButtonColor: UIColor {
+        .systemGray
+    }
+    
+    static var spinnerColor: UIColor {
+        .systemBlue
+    }
+    
 }
