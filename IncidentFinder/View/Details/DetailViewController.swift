@@ -116,7 +116,8 @@ private extension DetailViewController {
                                 locationName: item.location,
                                 coordinate: CLLocationCoordinate2D.init(
                                     latitude: item.latitude,
-                                    longitude: item.longitude)
+                                    longitude: item.longitude),
+                                image: viewModel.imageCache.getCachedImage(urlString: item.typeIcon.absoluteString as NSString)
                             )
                         )
                     )

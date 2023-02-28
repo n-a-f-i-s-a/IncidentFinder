@@ -176,7 +176,8 @@ private extension IncidentViewController {
                                 lastUpdated: item.lastUpdated,
                                 title: item.title,
                                 status: item.status,
-                                imageURL: item.typeIcon
+                                imageURL: item.typeIcon,
+                                imageCache: viewModel.imageCache
                             )
                         )
                     }

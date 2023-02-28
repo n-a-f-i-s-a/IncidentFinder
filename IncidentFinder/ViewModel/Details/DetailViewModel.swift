@@ -64,9 +64,14 @@ final public class DetailViewModel {
     }
     
     var incident: Incident
+    var imageCache: ImageCacheProtocol
     
-    init(incident: Incident) {
+    init(
+        incident: Incident,
+        imageCache: ImageCacheProtocol
+    ) {
         self.incident = incident
+        self.imageCache = imageCache
     }
     
 }
@@ -87,4 +92,5 @@ public extension DetailViewModel {
             longitude: incident.longitude
         )
     }
+    
 }

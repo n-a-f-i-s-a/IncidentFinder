@@ -17,12 +17,14 @@ final class MapCollectionViewCell: UICollectionViewListCell {
     static let reuseIdentifier = "mapCell"
     let identifier = "incident"
     let placeholderImageName = "map.circle.fill"
+    var cachedImage: UIImage?
     
     func configure(mapCellViewModel: MapCellViewModel) {
+        cachedImage = mapCellViewModel.incidentAnnotation.image
         let region = self.mapView.regionThatFits(
             MKCoordinateRegion(
                 center: mapCellViewModel.incidentAnnotation.coordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         )
         self.mapView.setRegion(region, animated: true)
         self.mapView.delegate = self
@@ -52,7 +54,8 @@ extension MapCollectionViewCell: MKMapViewDelegate {
                 annotation: annotation,
                 reuseIdentifier: identifier
             )
-            view.image = UIImage(systemName: placeholderImageName)
+            view.image = cachedImage ?? UIImage(systemName: placeholderImageName)
+            view.frame.size = CGSize(width: 40, height: 40)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)

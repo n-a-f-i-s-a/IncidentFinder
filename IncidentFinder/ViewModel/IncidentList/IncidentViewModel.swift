@@ -52,6 +52,7 @@ final public class IncidentViewModel {
     private let incidentService: IncidentServiceProtocol
     public var state: State
     var incidents: [Incident]
+    let imageCache: ImageCacheProtocol
     
     /// Initializes a view model.
     ///
@@ -62,6 +63,7 @@ final public class IncidentViewModel {
         self.incidentService = incidentService
         self.incidents = []
         self.state = .idle
+        imageCache = ImageCache()
     }
 }
 
@@ -97,7 +99,8 @@ extension IncidentViewModel {
             return
                 .detail(
                     DetailViewModel(
-                        incident: incidents[row]
+                        incident: incidents[row],
+                        imageCache: imageCache
                     )
                 )
         }

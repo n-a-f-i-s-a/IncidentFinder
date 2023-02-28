@@ -35,6 +35,8 @@
 		7897A32929ADDD48008D2A8B /* MapCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */; };
 		7897A32B29ADDDDC008D2A8B /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */; };
 		78F1680429AEA121005129CB /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1680329AEA121005129CB /* IncidentAnnotation.swift */; };
+		78F1680829AEB02B005129CB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1680729AEB02B005129CB /* ImageCache.swift */; };
+		78F1680B29AEBA20005129CB /* ImageCacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1680A29AEBA20005129CB /* ImageCacheProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellViewModel.swift; sourceTree = "<group>"; };
 		7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		78F1680329AEA121005129CB /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
+		78F1680729AEB02B005129CB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		78F1680A29AEBA20005129CB /* ImageCacheProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		7897A2CE29AD7964008D2A8B /* IncidentFinder */ = {
 			isa = PBXGroup;
 			children = (
+				78F1680929AEB79A005129CB /* Helper */,
 				7897A31329ADAC74008D2A8B /* Extensions */,
 				7897A30429AD7E58008D2A8B /* Service */,
 				7897A30129AD79C9008D2A8B /* Model */,
@@ -254,6 +259,15 @@
 				7897A32829ADDD48008D2A8B /* MapCellViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		78F1680929AEB79A005129CB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				78F1680729AEB02B005129CB /* ImageCache.swift */,
+				78F1680A29AEBA20005129CB /* ImageCacheProtocol.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +405,7 @@
 				7897A2D429AD7964008D2A8B /* IncidentViewController.swift in Sources */,
 				7897A31729ADC3C2008D2A8B /* Alert+showError.swift in Sources */,
 				7897A31929ADC5F8008D2A8B /* Colors.swift in Sources */,
+				78F1680B29AEBA20005129CB /* ImageCacheProtocol.swift in Sources */,
 				7897A2D029AD7964008D2A8B /* AppDelegate.swift in Sources */,
 				7897A32329ADD710008D2A8B /* StoryboardProtocol.swift in Sources */,
 				7897A30A29AD8173008D2A8B /* IncidentParser.swift in Sources */,
@@ -402,6 +417,7 @@
 				7897A31529ADAC8C008D2A8B /* Formatter.swift in Sources */,
 				7897A30C29AD8360008D2A8B /* IncidentViewModel.swift in Sources */,
 				7897A30829AD7EC8008D2A8B /* ServiceProtocol.swift in Sources */,
+				78F1680829AEB02B005129CB /* ImageCache.swift in Sources */,
 				7897A32B29ADDDDC008D2A8B /* TextCollectionViewCell.swift in Sources */,
 				7897A2D229AD7964008D2A8B /* SceneDelegate.swift in Sources */,
 				7897A31B29ADD621008D2A8B /* DetailViewController.swift in Sources */,

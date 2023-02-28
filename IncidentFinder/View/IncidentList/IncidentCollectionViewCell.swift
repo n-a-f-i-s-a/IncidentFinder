@@ -43,8 +43,9 @@ final class IncidentCollectionViewCell: UICollectionViewListCell {
     func showImage(incidentCellViewModel: IncidentCellViewModel) {
         Task { [weak self] in
             do {
-               let imageData = try await incidentCellViewModel.getImageData()
-                self?.imageView.image = UIImage(data: imageData)
+                if let image = try await incidentCellViewModel.getImageData() {
+                    self?.imageView.image = image
+                }
             } catch {
             }
         }
