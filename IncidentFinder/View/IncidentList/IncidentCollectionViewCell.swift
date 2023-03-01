@@ -48,7 +48,7 @@ private extension IncidentCollectionViewCell {
         Task { [weak self] in
             do {
                 if let image = try await incidentCellViewModel.getImageData() {
-                    self?.imageView.image = image
+                    self?.imageView.image = image.resizeImage(targetSize: CGSize(width: 40, height: 40))
                 }
             } catch {
                 // don't throw any error and show placeholder

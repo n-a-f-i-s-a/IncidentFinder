@@ -50,11 +50,6 @@ private extension IncidentViewController {
     
     func configureViewModel() {
         viewModel = IncidentViewModel(incidentService: incidentService)
-//        if ProcessInfo.processInfo.arguments.contains("Testing") {
-//            viewModel = IncidentViewModel(incidentService: MockIncidentService())
-//        } else {
-//            viewModel = IncidentViewModel(incidentService: incidentService)
-//        }
     }
     
     func configureNavBar() {
