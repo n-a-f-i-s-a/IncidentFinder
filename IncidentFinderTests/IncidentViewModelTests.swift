@@ -39,7 +39,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "GREENWAY",
                 status: Incident.StatusType.pending,
                 type: "Ambulance Response",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "MVA - Dangar Islan",
@@ -52,7 +52,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "Grantham Cr, Dangar Island, NSW 2083",
                 status: Incident.StatusType.outOfControl,
                 type: "MVA/Transport",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "Bush Fire - Tocumwal",
@@ -65,7 +65,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "Crothers Rd, Tocumwal, NSW 2714",
                 status: Incident.StatusType.underControl,
                 type: "Bush Fire",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "House Fire - WATSON",
@@ -78,7 +78,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "DOWLING STREET, WATSON, 2602",
                 status: Incident.StatusType.onScene,
                 type: "House Fire",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             )
         ]
         
@@ -99,7 +99,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "GREENWAY",
                 status: Incident.StatusType.pending,
                 type: "Ambulance Response",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "MVA - Dangar Islan",
@@ -112,7 +112,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "Grantham Cr, Dangar Island, NSW 2083",
                 status: Incident.StatusType.outOfControl,
                 type: "MVA/Transport",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "Bush Fire - Tocumwal",
@@ -125,7 +125,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "Crothers Rd, Tocumwal, NSW 2714",
                 status: Incident.StatusType.underControl,
                 type: "Bush Fire",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "House Fire - WATSON",
@@ -138,7 +138,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "DOWLING STREET, WATSON, 2602",
                 status: Incident.StatusType.onScene,
                 type: "House Fire",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             )
         ]
         testSubject.sortIncidents(isDescending: false)
@@ -155,7 +155,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "GREENWAY",
                 status: Incident.StatusType.pending,
                 type: "Ambulance Response",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "MVA - Dangar Islan",
@@ -168,7 +168,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "Grantham Cr, Dangar Island, NSW 2083",
                 status: Incident.StatusType.outOfControl,
                 type: "MVA/Transport",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "Bush Fire - Tocumwal",
@@ -181,7 +181,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "Crothers Rd, Tocumwal, NSW 2714",
                 status: Incident.StatusType.underControl,
                 type: "Bush Fire",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             ),
             Incident(
                 title: "House Fire - WATSON",
@@ -194,7 +194,7 @@ final class IncidentViewModelTests: XCTestCase {
                 location: "DOWLING STREET, WATSON, 2602",
                 status: Incident.StatusType.onScene,
                 type: "House Fire",
-                typeIcon: URL(string: "https://i.imgur.com/IUwhSWJ.png")!
+                typeIcon: URL(string: "https://i.imgur.com/I.png")!
             )
         ]
         

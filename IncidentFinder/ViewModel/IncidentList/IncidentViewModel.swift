@@ -22,7 +22,7 @@ final public class IncidentViewModel {
 
     enum Item: Hashable {
         case incident(Incident)
-        case empty(Int)
+        case empty(String)
     }
     
     /// Different states.
@@ -74,8 +74,13 @@ extension IncidentViewModel {
     func fetchIncidents() async throws {
         do {
             incidents = try await incidentService.getData()
-            sortIncidents(isDescending: true)
-            state = .loaded
+            
+            if incidents.isEmpty {
+                state = .empty
+            } else {
+                sortIncidents(isDescending: true)
+                state = .loaded
+            }
         } catch {
             state = .error(error)
             throw error

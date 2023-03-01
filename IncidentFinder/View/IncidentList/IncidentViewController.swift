@@ -167,7 +167,9 @@ private extension IncidentViewController {
         let allIncidentItems = incidents.map { IncidentViewModel.Item.incident($0)}
         snapshot.appendItems(allIncidentItems, toSection: .basicInfo)
 
-        
+        if viewModel.state == .empty {
+            snapshot.appendItems([IncidentViewModel.Item.empty("Oops! We didn't find any incident. Sorry! Please try again.")], toSection: .empty)
+        }
 
         dataSource.apply(snapshot, animatingDifferences: animate)
     }
@@ -200,8 +202,17 @@ private extension IncidentViewController {
                     
                     return cell
                 case .empty:
-                    // To implement
-                    return nil
+                    guard let cell = collectionView.dequeueReusableCell(
+                        withReuseIdentifier: EmptyCollectionViewCell.reuseIdentifier,
+                        for: indexPath) as? EmptyCollectionViewCell else { fatalError("Could not create new cell") }
+
+                    if case let .empty(item) = incidentItem {
+                        cell.configure(
+                            emptyCellViewModel: EmptytCellViewModel(title: item)
+                        )
+                    }
+                    
+                    return cell
                 }
                 
             }

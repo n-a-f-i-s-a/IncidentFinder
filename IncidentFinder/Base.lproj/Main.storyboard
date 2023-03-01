@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IncidentCell" id="AZC-Xa-UTl" customClass="IncidentCollectionViewCell" customModule="IncidentFinder" customModuleProvider="target">
-                                        <rect key="frame" x="78.666666666666671" y="0.0" width="236" height="230"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="230"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ngT-sT-Vt0">
                                             <rect key="frame" x="0.0" y="0.0" width="236" height="230"/>
@@ -104,6 +104,36 @@
                                             <outlet property="lastUpdatedLabel" destination="bJq-JR-r31" id="t21-Sw-M7h"/>
                                             <outlet property="statusLabel" destination="BxW-4e-cV4" id="ec7-27-FKr"/>
                                             <outlet property="titlelabel" destination="LVK-8H-ltG" id="dY2-7N-9ls"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="emptyCell" id="4uk-Dj-hpu" customClass="EmptyCollectionViewCell" customModule="IncidentFinder" customModuleProvider="target">
+                                        <rect key="frame" x="246" y="97" width="57.333333333333343" height="36.333333333333343"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ROR-FW-uTj">
+                                            <rect key="frame" x="0.0" y="0.0" width="57.333333333333343" height="36.333333333333343"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ylw-Ii-4u8">
+                                                    <rect key="frame" x="8" y="7.9999999999999982" width="41.333333333333336" height="20.333333333333329"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phc-g4-B2Z">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ylw-Ii-4u8" firstAttribute="leading" secondItem="ROR-FW-uTj" secondAttribute="leading" constant="8" id="OKz-T5-Rd1"/>
+                                                <constraint firstAttribute="bottom" secondItem="ylw-Ii-4u8" secondAttribute="bottom" constant="8" id="Szr-fv-B0H"/>
+                                                <constraint firstItem="ylw-Ii-4u8" firstAttribute="top" secondItem="ROR-FW-uTj" secondAttribute="top" constant="8" id="kIM-I1-thF"/>
+                                                <constraint firstAttribute="trailing" secondItem="ylw-Ii-4u8" secondAttribute="trailing" constant="8" id="rJf-ke-Hku"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="emptyMessageLabelView" destination="phc-g4-B2Z" id="d8K-ab-v8d"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

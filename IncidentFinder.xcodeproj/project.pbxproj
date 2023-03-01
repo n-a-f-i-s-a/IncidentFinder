@@ -36,6 +36,8 @@
 		7897A32B29ADDDDC008D2A8B /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */; };
 		78E6311629AEEE2800E48706 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6311529AEEE2800E48706 /* DetailViewModelTests.swift */; };
 		78E6311829AF019500E48706 /* Image+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6311729AF019500E48706 /* Image+resize.swift */; };
+		78E6311A29AF059300E48706 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6311929AF059300E48706 /* EmptyCollectionViewCell.swift */; };
+		78E6311C29AF06A400E48706 /* EmptyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E6311B29AF06A400E48706 /* EmptyCellViewModel.swift */; };
 		78F1680429AEA121005129CB /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1680329AEA121005129CB /* IncidentAnnotation.swift */; };
 		78F1680829AEB02B005129CB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1680729AEB02B005129CB /* ImageCache.swift */; };
 		78F1680B29AEBA20005129CB /* ImageCacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1680A29AEBA20005129CB /* ImageCacheProtocol.swift */; };
@@ -93,6 +95,8 @@
 		7897A32A29ADDDDC008D2A8B /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		78E6311529AEEE2800E48706 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
 		78E6311729AF019500E48706 /* Image+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+resize.swift"; sourceTree = "<group>"; };
+		78E6311929AF059300E48706 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		78E6311B29AF06A400E48706 /* EmptyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCellViewModel.swift; sourceTree = "<group>"; };
 		78F1680329AEA121005129CB /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
 		78F1680729AEB02B005129CB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		78F1680A29AEBA20005129CB /* ImageCacheProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProtocol.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			children = (
 				7897A31129ADA992008D2A8B /* IncidentCellViewModel.swift */,
 				7897A30B29AD8360008D2A8B /* IncidentViewModel.swift */,
+				78E6311B29AF06A400E48706 /* EmptyCellViewModel.swift */,
 			);
 			path = IncidentList;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			children = (
 				7897A30F29ADA861008D2A8B /* IncidentCollectionViewCell.swift */,
 				7897A2D329AD7964008D2A8B /* IncidentViewController.swift */,
+				78E6311929AF059300E48706 /* EmptyCollectionViewCell.swift */,
 			);
 			path = IncidentList;
 			sourceTree = "<group>";
@@ -432,9 +438,11 @@
 				7897A2D229AD7964008D2A8B /* SceneDelegate.swift in Sources */,
 				7897A31B29ADD621008D2A8B /* DetailViewController.swift in Sources */,
 				7897A30329AD79DE008D2A8B /* Incident.swift in Sources */,
+				78E6311C29AF06A400E48706 /* EmptyCellViewModel.swift in Sources */,
 				7897A30E29AD89C7008D2A8B /* ViewModelProtocol.swift in Sources */,
 				7897A32729ADDD15008D2A8B /* TextCellViewModel.swift in Sources */,
 				7897A32129ADD67E008D2A8B /* DetailViewModel.swift in Sources */,
+				78E6311A29AF059300E48706 /* EmptyCollectionViewCell.swift in Sources */,
 				78E6311829AF019500E48706 /* Image+resize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
