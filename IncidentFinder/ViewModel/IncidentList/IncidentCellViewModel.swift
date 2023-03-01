@@ -19,7 +19,7 @@ final class IncidentCellViewModel {
     var imageCache: ImageCacheProtocol
     
     init(
-        incidentService: IncidentService,
+        incidentService: IncidentServiceProtocol,
         lastUpdated: Date,
         title: String,
         status: Incident.StatusType,

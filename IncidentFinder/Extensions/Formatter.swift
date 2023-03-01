@@ -19,4 +19,9 @@ extension Formatter {
         return formatter.string(from: date)
     }
     
+    static func formattedDate(from string: String) -> Date {
+        let formatter = ISO8601DateFormatter()
+        return formatter.date(from: string) ?? Date()
+    }
+    
 }

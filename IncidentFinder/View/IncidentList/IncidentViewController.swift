@@ -23,7 +23,12 @@ final class IncidentViewController: UIViewController {
     var viewModel: IncidentViewModel!
     
     private lazy var dataSource = configureDataSource()
-    private var incidentService = IncidentService(parser: IncidentParser())
+    private var incidentService: IncidentServiceProtocol {
+        if ProcessInfo.processInfo.arguments.contains("Testing") {
+            return MockIncidentService()
+        }
+        return IncidentService(parser: IncidentParser())
+    }
     private var isSortedDescending: Bool = true
     private var storyBoardName: String = "Main"
     private var refreshControl: UIRefreshControl!
@@ -45,6 +50,11 @@ private extension IncidentViewController {
     
     func configureViewModel() {
         viewModel = IncidentViewModel(incidentService: incidentService)
+//        if ProcessInfo.processInfo.arguments.contains("Testing") {
+//            viewModel = IncidentViewModel(incidentService: MockIncidentService())
+//        } else {
+//            viewModel = IncidentViewModel(incidentService: incidentService)
+//        }
     }
     
     func configureNavBar() {

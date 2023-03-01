@@ -126,3 +126,23 @@ public extension IncidentViewModel {
     }
 
 }
+
+extension IncidentViewModel.State: Equatable {
+    public static func == (lhs: IncidentViewModel.State, rhs: IncidentViewModel.State) -> Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle):
+            return true
+        case (.loading, .loading):
+            return true
+        case (.loaded, .loaded):
+            return true
+        case (.empty, .empty):
+            return true
+        case (.loading,.loaded):
+            return false
+        default:
+            return false
+        }
+    }
+    
+}
