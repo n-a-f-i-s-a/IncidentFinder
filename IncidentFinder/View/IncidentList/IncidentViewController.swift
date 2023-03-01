@@ -52,6 +52,10 @@ final class IncidentViewController: UIViewController {
         configureNavTitle(prefersLargeTitles: false, title: "")
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
 }
 
 private extension IncidentViewController {
