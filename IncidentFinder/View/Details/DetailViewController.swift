@@ -31,6 +31,19 @@ final class DetailViewController: UIViewController, ViewModelProtocol {
         update(with: [viewModel.incident])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        configureNavTitle(prefersLargeTitles: false, title: viewModel.title)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        configureNavTitle(prefersLargeTitles: true, title: viewModel.title)
+    }
+    
+    func configureNavTitle(prefersLargeTitles: Bool, title: String) {
+        self.navigationItem.title = title
+        self.navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+    }
+    
     func configureCollectionView() {
         let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
@@ -40,9 +53,6 @@ final class DetailViewController: UIViewController, ViewModelProtocol {
     }
     
     func configureNavBar() {
-        self.navigationItem.title = viewModel.title
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: viewModel.imageName),
             style: .plain,

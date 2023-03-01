@@ -44,6 +44,14 @@ final class IncidentViewController: UIViewController {
         getIncidents()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        configureNavTitle(prefersLargeTitles: true, title: viewModel.title)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        configureNavTitle(prefersLargeTitles: false, title: "")
+    }
+    
 }
 
 private extension IncidentViewController {
@@ -52,9 +60,12 @@ private extension IncidentViewController {
         viewModel = IncidentViewModel(incidentService: incidentService)
     }
     
+    func configureNavTitle(prefersLargeTitles: Bool, title: String) {
+        self.navigationItem.title = title
+        self.navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+    }
+    
     func configureNavBar() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = viewModel.title
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: viewModel.imageName),
             style: .plain,
